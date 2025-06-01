@@ -9,8 +9,10 @@ export const FreeQuoteButton = () => {
       to={contactRoute.id}
       sx={{
         padding: "1rem",
-        width: "15rem",
+        width: "fit-content",
+        height: "4rem",
         color: "white",
+        whiteSpace: "nowrap",
         backgroundColor: "#4CAF50", // green
         "&:hover": {
           backgroundColor: "#4CAF5097", // darker green on hover
