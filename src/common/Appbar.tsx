@@ -1,28 +1,19 @@
 import {
   Box,
-  Drawer,
   IconButton,
   Link,
   List,
-  Menu,
-  Popover,
-  Slide,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { Link as RouterLink } from "@tanstack/react-router";
-
-import {
-  aboutUsRoute,
-  contactRoute,
-  indexRoute,
-  servicesRoute,
-} from "../routes/routes";
+import { indexRoute } from "../routes/routes";
 import { LinkList } from "./LinkList";
 import { ReactComponent as Logo } from "../assets/images/all_tree_works_logo.svg";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { menuRoutes } from "../routes";
 
 export const Appbar = () => {
   const theme = useTheme();
@@ -74,13 +65,6 @@ const MobileAppBar = () => {
     setIsOpen(!isOpen);
   };
 
-  const routes = [
-    { text: "Home", path: indexRoute },
-    { text: "Services", path: servicesRoute },
-    { text: "About Us", path: aboutUsRoute },
-    { text: "Contact Us", path: contactRoute },
-  ];
-
   return (
     <>
       <Box
@@ -122,7 +106,7 @@ const MobileAppBar = () => {
         }}
       >
         <List sx={{ padding: 0 }}>
-          {routes.map(({ text, path }) => (
+          {menuRoutes.map(({ text, path }) => (
             <Link
               key={text}
               onClick={toggleOpen}

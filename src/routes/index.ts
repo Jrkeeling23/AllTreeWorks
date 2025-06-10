@@ -17,6 +17,13 @@ const routeTree = rootRoute.addChildren(
   ]
 );
 
+export const menuRoutes = [
+    { text: "Home", path: indexRoute },
+    { text: "Services", path: servicesRoute },
+    { text: "About Us", path: aboutUsRoute },
+    { text: "Contact Us", path: contactRoute },
+  ];
+
 export const router = createRouter({ routeTree, context: { link: '', text: '' } });
 
 // Register the router instance for type safety

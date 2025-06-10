@@ -1,15 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Link as RouterLink } from "@tanstack/react-router";
 import Link from "@mui/material/Link";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import {
-  indexRoute,
-  servicesRoute,
-  aboutUsRoute,
-  contactRoute,
-} from "../routes/routes";
+import { menuRoutes } from "../routes";
 
 export const Footer = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       display="flex"
@@ -20,42 +17,18 @@ export const Footer = () => {
       p={5}
     >
       <Box display="flex" gap="3rem" alignItems={"center"}>
-        <Link
-          component={RouterLink}
-          display="flex"
-          alignItems="center"
-          style={{ color: "white", textDecoration: "none", height: "100%" }}
-          to={indexRoute.to}
-        >
-          <Typography variant="h6">Home</Typography>
-        </Link>
-        <Link
-          component={RouterLink}
-          display="flex"
-          alignItems="center"
-          style={{ color: "white", textDecoration: "none" }}
-          to={servicesRoute.to}
-        >
-          <Typography variant="h6">Services</Typography>
-        </Link>
-        <Link
-          component={RouterLink}
-          display="flex"
-          alignItems="center"
-          style={{ color: "white", textDecoration: "none" }}
-          to={aboutUsRoute.to}
-        >
-          <Typography variant="h6">About Us</Typography>
-        </Link>
-        <Link
-          component={RouterLink}
-          display="flex"
-          alignItems="center"
-          style={{ color: "white", textDecoration: "none" }}
-          to={contactRoute.to}
-        >
-          <Typography variant="h6">Contact</Typography>
-        </Link>
+        {!isMobile &&
+          menuRoutes.map((route) => (
+            <Link
+              component={RouterLink}
+              display="flex"
+              alignItems="center"
+              style={{ color: "white", textDecoration: "none", height: "100%" }}
+              to={route.path.to}
+            >
+              <Typography variant="h6">{route.text}</Typography>
+            </Link>
+          ))}
 
         <a
           href={import.meta.env.VITE_FACEBOOK_URL}
