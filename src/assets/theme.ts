@@ -1,6 +1,6 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 
-export const theme = createTheme({
+const baseTheme = createTheme({
     typography: {
         fontSize: 16,
         allVariants: {
@@ -25,3 +25,5 @@ export const theme = createTheme({
         },
     },
 });
+
+export const theme = responsiveFontSizes(baseTheme)

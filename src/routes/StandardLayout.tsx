@@ -12,15 +12,11 @@ export const StandardLayout = ({ children }: { children: ReactNode }) => {
       bgcolor="primary.light"
       overflow="clip"
     >
-      <Box bgcolor="primary.main">
+      <Box bgcolor="primary.main" position={"relative"}>
         <Appbar />
       </Box>
 
-      <Box
-        flexGrow={1}
-        display={'flex'}
-        bgcolor="primary.light"
-      >
+      <Box flexGrow={1} display={"flex"} bgcolor="primary.light">
         {children}
       </Box>
 
