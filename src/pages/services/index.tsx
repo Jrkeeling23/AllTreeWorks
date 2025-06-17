@@ -5,9 +5,10 @@ import beforeTree2_0 from "../../assets/images/before-tree-2.0.jpeg";
 import afterTree2_0 from "../../assets/images/after-tree-2.0.jpeg";
 import { FreeQuoteButton } from "../../common/FreeQuoteButton";
 import { theme } from "../../assets/theme";
+import { ImageCarousel } from "../../common/Carousel";
 
 export const Services = () => {
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       display="flex"
@@ -50,33 +51,11 @@ export const Services = () => {
               challenges of each removal. We always work with safety,
               efficiency, and property protection as our top priorities.
             </Typography>
-            {!isMobile && (
-              <Box
-                display="flex"
-                gap="2rem"
-                flexWrap={"wrap"}
-                justifyContent={"space-evenly"}
-              >
-                <Box
-                  component="img"
-                  src={beforeTree2_0}
-                  alt="All Tree Works Vehicle"
-                  sx={{
-                    width: "25rem",
-                    borderRadius: "8px",
-                  }}
-                />
-                <Box
-                  component="img"
-                  src={afterTree2_0}
-                  alt="All Tree Works Vehicle"
-                  sx={{
-                    width: "25rem",
-                    borderRadius: "8px",
-                  }}
-                />
+            <Box display={"flex"} width={"100%"} justifyContent={"center"}>
+              <Box width={isMobile ? "100%" : "30rem"}>
+                <ImageCarousel images={[beforeTree2_0, afterTree2_0]} />
               </Box>
-            )}
+            </Box>
           </Box>
         </Box>
         <Box display="flex" flexDirection={"column"} gap="1rem">
@@ -96,33 +75,11 @@ export const Services = () => {
               deliver professional service with a neighborly touch. We're here
               to keep Billings' trees strong, safe, and stunning
             </Typography>
-            {!isMobile && (
-              <Box
-                display="flex"
-                gap="2rem"
-                flexWrap={"wrap"}
-                justifyContent={"space-evenly"}
-              >
-                <Box
-                  component="img"
-                  src={vehicle}
-                  alt="All Tree Works Vehicle"
-                  sx={{
-                    width: "25rem",
-                    borderRadius: "8px",
-                  }}
-                />
-                <Box
-                  component="img"
-                  src={afterTree1_0}
-                  alt="All Tree Works Vehicle"
-                  sx={{
-                    width: "25rem",
-                    borderRadius: "8px",
-                  }}
-                />
+            <Box display={"flex"} width={"100%"} justifyContent={"center"}>
+              <Box width={isMobile ? "100%" : "30rem"}>
+                <ImageCarousel images={[vehicle, afterTree1_0]} />
               </Box>
-            )}
+            </Box>
           </Box>
         </Box>
       </Box>
