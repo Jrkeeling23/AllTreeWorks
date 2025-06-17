@@ -1,18 +1,19 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import vehicle from "../../assets/images/vehicle.jpeg";
 import afterTree1_0 from "../../assets/images/after-tree-1.0.jpeg";
-import afterTree1_1 from "../../assets/images/after-tree-1.1.jpeg";
 import beforeTree2_0 from "../../assets/images/before-tree-2.0.jpeg";
 import afterTree2_0 from "../../assets/images/after-tree-2.0.jpeg";
 import { FreeQuoteButton } from "../../common/FreeQuoteButton";
+import { theme } from "../../assets/theme";
 
 export const Services = () => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box
       display="flex"
       flexDirection={"column"}
       alignItems={"center"}
-      gap="5rem"
+      gap="2rem"
     >
       <Box display="flex" flexDirection={"column"} gap="2rem">
         <Box display="flex" flexDirection={"column"} gap="1rem">
@@ -22,7 +23,7 @@ export const Services = () => {
             alignItems="center"
           >
             <Typography variant="h4">What We Do</Typography>
-            <FreeQuoteButton />
+            {!isMobile && <FreeQuoteButton />}
           </Box>
 
           <Typography>
@@ -30,6 +31,12 @@ export const Services = () => {
             your property safe, beautiful, and thriving: tree removal and tree
             pruning.
           </Typography>
+
+          {isMobile && (
+            <Box display="flex" width="100%" justifyContent={"center"}>
+              <FreeQuoteButton />
+            </Box>
+          )}
         </Box>
         <Box display="flex" flexDirection={"column"} gap="1rem">
           <Typography variant="h5">Tree Removal</Typography>
@@ -43,33 +50,33 @@ export const Services = () => {
               challenges of each removal. We always work with safety,
               efficiency, and property protection as our top priorities.
             </Typography>
-            <Box
-              display="flex"
-              gap="2rem"
-              flexWrap={"wrap"}
-              justifyContent={"space-evenly"}
-            >
+            {!isMobile && (
               <Box
-                component="img"
-                src={beforeTree2_0}
-                alt="All Tree Works Vehicle"
-                sx={{
-                  width: "25rem",
-                  //   height: "auto",
-                  borderRadius: "8px",
-                }}
-              />
-              <Box
-                component="img"
-                src={afterTree2_0}
-                alt="All Tree Works Vehicle"
-                sx={{
-                  width: "25rem",
-                  //   height: "auto",
-                  borderRadius: "8px",
-                }}
-              />
-            </Box>
+                display="flex"
+                gap="2rem"
+                flexWrap={"wrap"}
+                justifyContent={"space-evenly"}
+              >
+                <Box
+                  component="img"
+                  src={beforeTree2_0}
+                  alt="All Tree Works Vehicle"
+                  sx={{
+                    width: "25rem",
+                    borderRadius: "8px",
+                  }}
+                />
+                <Box
+                  component="img"
+                  src={afterTree2_0}
+                  alt="All Tree Works Vehicle"
+                  sx={{
+                    width: "25rem",
+                    borderRadius: "8px",
+                  }}
+                />
+              </Box>
+            )}
           </Box>
         </Box>
         <Box display="flex" flexDirection={"column"} gap="1rem">
@@ -89,37 +96,41 @@ export const Services = () => {
               deliver professional service with a neighborly touch. We're here
               to keep Billings' trees strong, safe, and stunning
             </Typography>
-            <Box
-              display="flex"
-              gap="2rem"
-              flexWrap={"wrap"}
-              justifyContent={"space-evenly"}
-            >
+            {!isMobile && (
               <Box
-                component="img"
-                src={vehicle}
-                alt="All Tree Works Vehicle"
-                sx={{
-                  width: "25rem",
-                  //   height: "auto",
-                  borderRadius: "8px",
-                }}
-              />
-              <Box
-                component="img"
-                src={afterTree1_0}
-                alt="All Tree Works Vehicle"
-                sx={{
-                  width: "25rem",
-                  //   height: "auto",
-                  borderRadius: "8px",
-                }}
-              />
-            </Box>
+                display="flex"
+                gap="2rem"
+                flexWrap={"wrap"}
+                justifyContent={"space-evenly"}
+              >
+                <Box
+                  component="img"
+                  src={vehicle}
+                  alt="All Tree Works Vehicle"
+                  sx={{
+                    width: "25rem",
+                    borderRadius: "8px",
+                  }}
+                />
+                <Box
+                  component="img"
+                  src={afterTree1_0}
+                  alt="All Tree Works Vehicle"
+                  sx={{
+                    width: "25rem",
+                    borderRadius: "8px",
+                  }}
+                />
+              </Box>
+            )}
           </Box>
         </Box>
       </Box>
-      <Box display="flex" width="100%" justifyContent={"flex-end"}>
+      <Box
+        display="flex"
+        width="100%"
+        justifyContent={isMobile ? "center" : "flex-end"}
+      >
         <FreeQuoteButton />
       </Box>
     </Box>
