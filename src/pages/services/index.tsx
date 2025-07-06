@@ -86,7 +86,7 @@ export const Services = () => {
       <Box
         display="flex"
         width="100%"
-        justifyContent={isMobile ? "center" : "flex-end"}
+        justifyContent={ "center"}
       >
         <FreeQuoteButton />
       </Box>
