@@ -34,7 +34,7 @@ export const rootRoute = createRootRouteWithContext<InnerLayoutContext>()({
 
 export const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/",
+  path: "/AllTreeWorks",
   context: () => ({
     link: homepage,
     text: "Reliable Tree Care That's Rooted in Excellence",
