@@ -44,14 +44,14 @@ export const indexRoute = createRoute({
 
 export const aboutUsRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/aboutUs",
+  path: "/AllTreeWorks/aboutUs",
   context: () => ({ link: aboutUsImg, text: "A Local Team You Can Rely On" }),
   component: () => <AboutUs />,
 });
 
 export const servicesRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/services",
+  path: "/AllTreeWorks/services",
   context: () => ({
     link: servicesImg,
     text: "Safe. Skilled. Specialized Tree Care Services",
@@ -61,7 +61,7 @@ export const servicesRoute = createRoute({
 
 export const contactRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/contact",
+  path: "/AllTreeWorks/contact",
   context: () => ({
     link: contactImg,
     text: "Reach Out Today for Expert Tree Care",
