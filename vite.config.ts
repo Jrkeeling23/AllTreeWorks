@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import svgr from "@svgr/rollup";
 
 export default defineConfig({
-    base: '/AllTreeWorks/',
+    base: '/',
     plugins: [react(), svgr()],
     server: {
         host: '0.0.0.0',  // or 'localhost' or a custom IP
